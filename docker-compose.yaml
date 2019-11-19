@@ -18,7 +18,7 @@ services:
     environment:
       - HUB_HOST=hub
   automation1:
-    image: jmorah/selenium-docker
+    image: jmorah/selenium-dockerz
     depends_on:
       - chrome
       - firefox
@@ -30,7 +30,7 @@ services:
       - ./output/automation1:/usr/share/automation/test-output
 
   automation2:
-    image: jmorah/selenium-docker
+    image: jmorah/selenium-dockerz
     depends_on:
       - chrome
       - firefox
@@ -42,7 +42,7 @@ services:
       - ./output/automation2:/usr/share/automation/test-output
 
   automation3:
-    image: jmorah/selenium-docker
+    image: jmorah/selenium-dockerz
     depends_on:
       - chrome
       - firefox
@@ -54,7 +54,7 @@ services:
       - ./output/automation3:/usr/share/automation/test-output
 
   automation4:
-    image: jmorah/selenium-docker
+    image: jmorah/selenium-dockerz
     depends_on:
       - chrome
       - firefox
