@@ -3,7 +3,7 @@ pipeline{
 	stages{
 		stage("Pull Latest Image"){
 			steps{
-				sh "docker pull jmorah/selenium-docker"
+				sh "docker pull jmorah/selenium-dockerz"
 			}
 		}
 		stage("Start Grid"){
