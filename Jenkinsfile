@@ -13,7 +13,7 @@ pipeline{
 		}
 		stage("Run Test"){
 			steps{
-				sh "docker-compose up automation1 automation2"
+				sh "docker-compose up smoketest"
 			}
 		}
 	}
