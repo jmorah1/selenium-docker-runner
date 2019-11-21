@@ -16,31 +16,30 @@ services:
     depends_on:
       - hub
     environment:
-      - HUB_HOST=hub
-  automation1:
-    image: jmorah/selenium-dockerz:latest
+      - HUB_HOST=hub  
+  smoketest:
+    image: jmorah/selenium-dockerz
     depends_on:
       - chrome
-      - firefox
+
     environment:
       - BROWSER=chrome
       - HUB_HOST=hub
-      - SUITE=dockertest.xml
+      - SUITE=smoketest.xml
     volumes:
-      - ./output/automation1:/usr/share/automation/test-output
+      - ./output/smoketest:/usr/share/automation/test-output
 
-  automation2:
-    image: jmorah/selenium-dockerz:latest
+  signupregression:
+    image: jmorah/selenium-dockerz
     depends_on:
       - chrome
-      - firefox
-    environment:
-      - BROWSER=firefox
-      - HUB_HOST=hub
-      - SUITE=dockertest.xml
-    volumes:
-      - ./output/automation2:/usr/share/automation/test-output
 
+    environment:
+      - BROWSER=chrome
+      - HUB_HOST=hub
+      - SUITE=smoketest.xml
+    volumes:
+      - ./output/signupregression:/usr/share/automation/test-output
   automation3:
     image: jmorah/selenium-dockerz
     depends_on:
